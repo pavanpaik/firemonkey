@@ -50,7 +50,7 @@ interface RunRecord {
 
 const agents: AgentDef[] = [
   {
-    skill: "market-analyst",
+    skill: "/market-analyst",
     name: "Market Analyst",
     description: "Technical + fundamental analysis",
     icon: TrendingUp,
@@ -58,7 +58,7 @@ const agents: AgentDef[] = [
     requiresArgs: true,
   },
   {
-    skill: "news-sentiment",
+    skill: "/news-sentiment",
     name: "News & Sentiment",
     description: "News aggregation and sentiment scoring",
     icon: Newspaper,
@@ -66,7 +66,7 @@ const agents: AgentDef[] = [
     requiresArgs: true,
   },
   {
-    skill: "trade-strategist",
+    skill: "/trade-strategist",
     name: "Trade Strategist",
     description: "Trade setup generation",
     icon: Target,
@@ -74,7 +74,7 @@ const agents: AgentDef[] = [
     requiresArgs: true,
   },
   {
-    skill: "risk-manager",
+    skill: "/risk-manager",
     name: "Risk Manager",
     description: "Trade and portfolio risk validation",
     icon: Shield,
@@ -82,7 +82,7 @@ const agents: AgentDef[] = [
     requiresArgs: false,
   },
   {
-    skill: "portfolio-manager",
+    skill: "/portfolio-manager",
     name: "Portfolio Manager",
     description: "Holdings, P&L, rebalancing",
     icon: Briefcase,
@@ -90,7 +90,7 @@ const agents: AgentDef[] = [
     requiresArgs: false,
   },
   {
-    skill: "trade-executor",
+    skill: "/trade-executor",
     name: "Trade Executor",
     description: "Order submission via Alpaca",
     icon: Zap,
@@ -98,7 +98,7 @@ const agents: AgentDef[] = [
     requiresArgs: false,
   },
   {
-    skill: "morning-brief",
+    skill: "/morning-brief",
     name: "Morning Brief",
     description: "Daily comprehensive market overview",
     icon: Sun,
@@ -175,20 +175,24 @@ export default function AgentsPage() {
       });
 
       if (!res.ok) {
-        const errorBody = await res.text();
+        const errorBody = await res.json().catch(() => null);
         throw new Error(
-          errorBody || `Request failed with status ${res.status}`
+          errorBody?.error || `Request failed with status ${res.status}`
         );
       }
 
       const data = await res.json();
+      const failed = data.exitCode !== 0 || (!data.output && data.error);
       setRuns((prev) =>
         prev.map((r) =>
           r.id === id
             ? {
                 ...r,
-                output: data.output ?? JSON.stringify(data, null, 2),
-                status: "success" as const,
+                output: data.output || null,
+                error: failed
+                  ? data.error || `Agent exited with code ${data.exitCode}`
+                  : null,
+                status: failed ? ("error" as const) : ("success" as const),
               }
             : r
         )

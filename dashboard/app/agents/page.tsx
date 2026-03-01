@@ -271,7 +271,7 @@ export default function AgentsPage() {
               {/* Skill Command */}
               <div className="mb-3">
                 <code className="text-xs font-mono text-muted">
-                  /{agent.skill}
+                  {agent.skill}
                   {agent.requiresArgs ? " [args]" : ""}
                 </code>
               </div>

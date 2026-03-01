@@ -24,9 +24,13 @@ export async function runClaudeSkill(
     const chunks: string[] = [];
     const errors: string[] = [];
 
+    // Unset vars that cause claude to refuse nested session launch
+    const { CLAUDECODE, CLAUDE_CODE_ENTRYPOINT, ...cleanEnv } = process.env;
+    void CLAUDECODE; void CLAUDE_CODE_ENTRYPOINT;
+
     const proc = spawn("claude", ["-p", prompt], {
       cwd: projectDir,
-      env: { ...process.env, CLAUDECODE: "" },
+      env: cleanEnv,
       stdio: ["pipe", "pipe", "pipe"],
     });
 

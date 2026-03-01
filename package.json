@@ -1,0 +1,22 @@
+{
+  "name": "firemonkey",
+  "version": "0.1.0",
+  "description": "Financial Agent Suite — Multi-agent market analysis and trading intelligence built on Claude Code",
+  "private": true,
+  "keywords": [
+    "claude",
+    "mcp",
+    "financial",
+    "trading",
+    "agents",
+    "market-analysis"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "setup": "echo 'Copy .env.example to .env and fill in API keys'",
+    "check-env": "node -e \"const vars=['FINNHUB_API_KEY','ALPACA_API_KEY']; vars.forEach(v => console.log(v + ': ' + (process.env[v] ? 'SET' : 'MISSING')))\""
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

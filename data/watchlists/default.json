@@ -1,0 +1,36 @@
+{
+  "name": "Default Watchlist",
+  "updated": "2026-03-01",
+  "tickers": [
+    {
+      "symbol": "AAPL",
+      "notes": "Mega-cap tech bellwether",
+      "key_levels": { "support": [], "resistance": [] }
+    },
+    {
+      "symbol": "MSFT",
+      "notes": "Cloud + AI leader",
+      "key_levels": { "support": [], "resistance": [] }
+    },
+    {
+      "symbol": "NVDA",
+      "notes": "AI/GPU leader",
+      "key_levels": { "support": [], "resistance": [] }
+    },
+    {
+      "symbol": "TSLA",
+      "notes": "High volatility, momentum play",
+      "key_levels": { "support": [], "resistance": [] }
+    },
+    {
+      "symbol": "SPY",
+      "notes": "S&P 500 ETF — market benchmark",
+      "key_levels": { "support": [], "resistance": [] }
+    },
+    {
+      "symbol": "QQQ",
+      "notes": "Nasdaq 100 ETF — tech benchmark",
+      "key_levels": { "support": [], "resistance": [] }
+    }
+  ]
+}

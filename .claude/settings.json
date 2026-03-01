@@ -1,0 +1,50 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '--- FireMonkey Session Started ---' && cat data/portfolio-state.json 2>/dev/null || echo '{\"status\": \"no portfolio loaded\", \"message\": \"Run /portfolio-manager to initialize\"}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "trade-executor",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/validate-trade.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "trade-executor",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/log-trade.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Before ending this session, check: Are there any open orders that need monitoring, risk alerts that need attention, or portfolio state changes that should be saved to data/portfolio-state.json? Respond {\"ok\": true} if everything is clear, or {\"ok\": false, \"reason\": \"details\"} if action is needed."
+          }
+        ]
+      }
+    ]
+  }
+}

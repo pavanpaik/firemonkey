@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "alpha-vantage": {
+      "type": "http",
+      "url": "https://mcp.alphavantage.co/mcp"
+    },
+    "financial-datasets": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@financial-datasets/mcp-server"],
+      "env": {
+        "FINANCIAL_DATASETS_API_KEY": "${FINANCIAL_DATASETS_API_KEY}"
+      }
+    },
+    "finnhub": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "mcp-finnhub"],
+      "env": {
+        "FINNHUB_API_KEY": "${FINNHUB_API_KEY}"
+      }
+    },
+    "alpaca": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@alpacahq/alpaca-mcp-server"],
+      "env": {
+        "ALPACA_API_KEY": "${ALPACA_API_KEY}",
+        "ALPACA_API_SECRET": "${ALPACA_API_SECRET}",
+        "ALPACA_BASE_URL": "https://paper-api.alpaca.markets"
+      }
+    },
+    "yfinance": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["yfinance-mcp-server"]
+    }
+  }
+}

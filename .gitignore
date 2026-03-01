@@ -1,0 +1,26 @@
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Local Claude settings (may contain credentials)
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Node modules
+node_modules/
+
+# Sensitive data (trade history, portfolio with real amounts)
+# Note: data/ files are committed with sample/paper data only.
+# If using live trading, add data/ to gitignore.
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

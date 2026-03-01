@@ -274,7 +274,7 @@ export default function AgentsPage() {
 
               {/* Input + Run Button */}
               <div className="mt-auto flex gap-2">
-                {agent.requiresArgs ? (
+                {agent.requiresArgs && (
                   <input
                     type="text"
                     value={argValues[agent.skill] ?? ""}
@@ -293,13 +293,11 @@ export default function AgentsPage() {
                     disabled={isAnyRunning}
                     className="min-w-0 flex-1 rounded-lg border border-input-border bg-input-bg px-3 py-2 text-sm text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none disabled:opacity-50"
                   />
-                ) : (
-                  <div className="flex-1" />
                 )}
                 <button
                   onClick={() => runAgent(agent)}
                   disabled={isAnyRunning}
-                  className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-50"
+                  className={`flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-50 ${agent.requiresArgs ? "shrink-0" : "w-full"}`}
                 >
                   {isRunning ? (
                     <Loader2 className="h-4 w-4 animate-spin" />

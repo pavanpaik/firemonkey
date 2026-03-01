@@ -24,7 +24,7 @@ export async function runClaudeSkill(
     const chunks: string[] = [];
     const errors: string[] = [];
 
-    const proc = spawn("claude", ["-p", prompt, "--no-input"], {
+    const proc = spawn("claude", ["-p", prompt], {
       cwd: projectDir,
       env: { ...process.env, CLAUDECODE: "" },
       stdio: ["pipe", "pipe", "pipe"],

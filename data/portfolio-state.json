@@ -1,14 +1,146 @@
 {
-  "last_updated": "2026-03-01T00:00:00Z",
+  "last_updated": "2026-02-26T08:50:00-05:00",
   "account": {
     "mode": "paper",
-    "total_value": 100000.00,
-    "cash": 100000.00,
-    "buying_power": 200000.00
+    "total_value": 153912.67,
+    "cash": 30832.14,
+    "buying_power": 61664.28
   },
-  "positions": [],
-  "pending_orders": [],
-  "daily_trades_count": 0,
-  "drawdown_from_peak": 0.0,
-  "peak_value": 100000.00
+  "positions": [
+    {
+      "ticker": "AMD",
+      "shares": 5,
+      "avg_cost": 125.00,
+      "current_price": 113.05,
+      "market_value": 565.25,
+      "unrealized_pnl": -59.75,
+      "unrealized_pnl_pct": -9.56,
+      "stop_loss": 102.00,
+      "sector": "Technology"
+    },
+    {
+      "ticker": "AMZN",
+      "shares": 30,
+      "avg_cost": 204.00,
+      "current_price": 228.50,
+      "market_value": 6855.00,
+      "unrealized_pnl": 735.00,
+      "unrealized_pnl_pct": 12.01,
+      "stop_loss": 210.00,
+      "sector": "Consumer Cyclical"
+    },
+    {
+      "ticker": "AVGO",
+      "shares": 47.557,
+      "avg_cost": 58.64,
+      "current_price": 215.20,
+      "market_value": 10234.27,
+      "unrealized_pnl": 7445.52,
+      "unrealized_pnl_pct": 266.89,
+      "stop_loss": 195.00,
+      "sector": "Technology"
+    },
+    {
+      "ticker": "GOOGL",
+      "shares": 44.037,
+      "avg_cost": 159.41,
+      "current_price": 189.15,
+      "market_value": 8329.40,
+      "unrealized_pnl": 1309.26,
+      "unrealized_pnl_pct": 18.66,
+      "stop_loss": 172.00,
+      "sector": "Communication Services"
+    },
+    {
+      "ticker": "MSFT",
+      "shares": 9.085,
+      "avg_cost": 365.08,
+      "current_price": 432.50,
+      "market_value": 3929.26,
+      "unrealized_pnl": 612.60,
+      "unrealized_pnl_pct": 18.47,
+      "stop_loss": 400.00,
+      "sector": "Technology"
+    },
+    {
+      "ticker": "NVDA",
+      "shares": 55.01,
+      "avg_cost": 96.90,
+      "current_price": 131.25,
+      "market_value": 7219.44,
+      "unrealized_pnl": 1889.59,
+      "unrealized_pnl_pct": 35.45,
+      "stop_loss": 118.00,
+      "sector": "Technology"
+    },
+    {
+      "ticker": "PLTR",
+      "shares": 12,
+      "avg_cost": 116.36,
+      "current_price": 94.00,
+      "market_value": 1128.00,
+      "unrealized_pnl": -268.32,
+      "unrealized_pnl_pct": -19.21,
+      "stop_loss": 85.00,
+      "sector": "Technology"
+    },
+    {
+      "ticker": "TSLA",
+      "shares": 10,
+      "avg_cost": 375.00,
+      "current_price": 325.02,
+      "market_value": 3250.20,
+      "unrealized_pnl": -499.80,
+      "unrealized_pnl_pct": -13.33,
+      "stop_loss": 290.00,
+      "sector": "Consumer Cyclical"
+    },
+    {
+      "ticker": "VOO",
+      "shares": 130.575,
+      "avg_cost": 512.09,
+      "current_price": 565.35,
+      "market_value": 73813.58,
+      "unrealized_pnl": 6954.82,
+      "unrealized_pnl_pct": 10.40,
+      "stop_loss": 530.00,
+      "sector": "ETF"
+    },
+    {
+      "ticker": "VTI",
+      "shares": 25.388,
+      "avg_cost": 221.97,
+      "current_price": 305.50,
+      "market_value": 7756.13,
+      "unrealized_pnl": 2121.07,
+      "unrealized_pnl_pct": 37.63,
+      "stop_loss": 285.00,
+      "sector": "ETF"
+    }
+  ],
+  "pending_orders": [
+    {
+      "id": "ord_20260226_001",
+      "ticker": "AMD",
+      "side": "buy",
+      "qty": 10,
+      "type": "limit",
+      "limit_price": 108.00,
+      "status": "pending",
+      "submitted_at": "2026-02-25T15:30:00-05:00"
+    },
+    {
+      "id": "ord_20260226_002",
+      "ticker": "PLTR",
+      "side": "sell",
+      "qty": 6,
+      "type": "stop",
+      "stop_price": 85.00,
+      "status": "pending",
+      "submitted_at": "2026-02-26T08:35:00-05:00"
+    }
+  ],
+  "daily_trades_count": 2,
+  "drawdown_from_peak": 1.97,
+  "peak_value": 157000.00
 }

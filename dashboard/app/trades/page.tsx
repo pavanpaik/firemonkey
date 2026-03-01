@@ -38,7 +38,7 @@ interface PendingOrder {
   ticker: string;
   side: string;
   qty: number;
-  order_type: string;
+  type: string;
   limit_price?: number;
   stop_price?: number;
   status: string;
@@ -406,9 +406,9 @@ export default function TradesPage() {
                     <td className="text-right tabular-nums">{order.qty}</td>
                     <td>
                       <span
-                        className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${orderTypeBadge(order.order_type)}`}
+                        className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${orderTypeBadge(order.type)}`}
                       >
-                        {order.order_type.toUpperCase()}
+                        {order.type.toUpperCase()}
                       </span>
                     </td>
                     <td className="text-right tabular-nums">
